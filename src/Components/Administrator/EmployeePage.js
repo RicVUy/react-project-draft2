@@ -10,7 +10,7 @@ const EmployeePage = () => {
     
      
     useEffect(() => {
-        fetch("http://localhost:3000/employees")
+        fetch("/employees")
         .then(r => r.json())
         .then(setEmployees) 
           },[])

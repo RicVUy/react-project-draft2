@@ -12,7 +12,7 @@ function EmployeeEdit() {
     e.preventDefault();
 
     // Fetch employee data based on the entered ID
-    fetch(`http://localhost:3000/employees/${employeeId}`)
+    fetch(`/employees/${employeeId}`)
       .then((resp) => {
         if (resp.status === 404) {
           throw new Error('Employee not found');
@@ -30,7 +30,7 @@ function EmployeeEdit() {
 
   const handleUpdateEmployee = (updatedData) => {
     // Send a PATCH request to update the employee using updatedData
-    fetch(`http://localhost:3000/employees/${employeeId}`, {
+    fetch(`/employees/${employeeId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ function EmployeeEdit() {
   };
        
   return (
-    <div>
+    <div className='card'>
       <h2>Update Employee</h2>
       <form onSubmit={handleFormSubmit}>
         <div>

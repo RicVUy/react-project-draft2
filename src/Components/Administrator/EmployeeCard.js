@@ -34,14 +34,14 @@ function EmployeeCard ({employee, onUpdateEmployee, onDeleteEmployee}) {
           },
           body: JSON.stringify({workTime: updatedWorkTime})
         }
-        fetch(`http://localhost:3000/employees/${id}`, configObj)
+        fetch(`/employees/${id}`, configObj)
         .then(r => r.json())
         .then(updatedEmployee => onUpdateEmployee(updatedEmployee))
     
         setUpdatedWorkTime(0)
       }
       function handleDelete(params) {
-        fetch(`http://localhost:3000/employees/${id}`, {
+        fetch(`/employees/${id}`, {
           method: "DELETE"
         })
         .then(onDeleteEmployee(id))
